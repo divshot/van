@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var Van = require('../lib/van');
+
+var van = new Van({
+  scripts: ['superstatic -p 4000', 'superstatic -p 4001', 'curl -I https://www.google.com/']
+});
+
+van.start();
+
+process.on('SIGINT', function() {
+  console.log("SIGINT received");
+  van.stop();
+});
+process.on('SIGTERM', function() {
+  console.log("SIGTERM received");
+});

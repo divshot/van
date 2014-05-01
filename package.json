@@ -1,0 +1,30 @@
+{
+  "name": "van",
+  "version": "0.0.0",
+  "description": "All of your processes can pile into the van.",
+  "main": "lib/van.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divshot/van.git"
+  },
+  "keywords": [
+    "processes",
+    "interleaving",
+    "command-line"
+  ],
+  "author": "Michael Bleigh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divshot/van/issues"
+  },
+  "homepage": "https://github.com/divshot/van",
+  "dependencies": {
+    "colors": "~0.6.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2"
+  }
+}
