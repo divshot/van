@@ -13,11 +13,13 @@ have exited. An example:
 var Van = require("van")
 
 var van = new Van({
-  mode: 'interleave',
-  scripts: ['bundle exec jekyll build --watch', 'superstatic -p 4000']
+  scripts: {
+    jekyll: 'bundle exec jekyll build --watch', 
+    server: 'superstatic -p 4000'
+  }
 });
 
-// spawn the child processes
+// spawn the child processes and interleave output
 van.start();
 
 process.on('SIGINT', function() {

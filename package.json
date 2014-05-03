@@ -15,6 +15,9 @@
     "interleaving",
     "command-line"
   ],
+  "bin": {
+    "van": "bin/van"
+  },
   "author": "Michael Bleigh",
   "license": "MIT",
   "bugs": {
@@ -22,9 +25,11 @@
   },
   "homepage": "https://github.com/divshot/van",
   "dependencies": {
-    "colors": "~0.6.2"
+    "colors": "~0.6.2",
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
-    "mocha": "~1.18.2"
+    "mocha": "~1.18.2",
+    "chai": "^1.9.1"
   }
 }
