@@ -2,6 +2,12 @@
 
 Van is meant to provide simple multi-process execution for Node scripts.
 
+**Warning:** This library was created and intended for spinning up multiple
+processes on a local development environment. It isn't designed or intended
+(at least at this point) for any kind of production-server like usage. In
+other words, this is a dev utility not a [foreman](https://github.com/ddollar/foreman)
+replacement.
+
 ## Interleave
 
 The most common use case for Van is to run several processes at once and
