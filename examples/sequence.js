@@ -1,5 +1,3 @@
-console.log(process.argv);
-
 var Van = require('../lib');
 
 var van = new Van({
