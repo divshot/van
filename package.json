@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/divshot/van",
   "dependencies": {
-    "colors": "~0.6.2",
+    "chalk": "^0.4.0",
     "lodash": "^2.4.1"
   },
   "devDependencies": {

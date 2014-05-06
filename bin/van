@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 var Van = require('../lib');
-var colors = require('colors');
+var format = require('chalk');
 
-console.log("Sorry! The van binary isn't quite baked yet.".bold.yellow);
+console.log(format.bold.yellow("Sorry! The van binary isn't quite baked yet."));
