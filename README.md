@@ -1,5 +1,7 @@
 # Van: Simple Multi-Process Execution
 
+[![Code Climate](https://codeclimate.com/github/divshot/van.png)](https://codeclimate.com/github/divshot/van)
+
 Van is meant to provide simple multi-process execution for Node scripts.
 
 **Warning:** This library was created and intended for spinning up multiple
