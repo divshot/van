@@ -1,8 +1,10 @@
+console.log(process.argv);
+
 var Van = require('../lib');
 
 var van = new Van({
   scripts: [
-    'echo "Hello"',
+    'echo "Hello World"',
     'ls derp'
   ]
 });
