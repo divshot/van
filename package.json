@@ -2,7 +2,7 @@
   "name": "van",
   "version": "0.0.1",
   "description": "All of your processes can pile into the van.",
-  "main": "lib/van.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha"
   },
