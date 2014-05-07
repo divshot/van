@@ -1,6 +1,40 @@
 #!/usr/bin/env node
 
-var Van = require('../lib');
 var colors = require('colors');
+var fs = require('fs');
+var argv = require('minimist')(process.argv.slice(2), {alias: {c: ['config']}});
 
-console.log("Sorry! The van binary isn't quite baked yet.".bold.yellow);
+function errorOut(message, code) {
+  code = code || 1
+  process.stderr.write("Error: ".red + message + "\n");
+  process.exit(code);
+}
+
+function loadVanfile() {
+  if (argv.c) {
+    if (fs.existsSync(argv.c)) {
+      return require(argv.c);
+    } else {
+      errorOut("Could not load file at location " + argv.c.bold);
+    }
+  } else {
+    // TODO: Make this crawl up the directory tree
+    if (fs.existsSync(process.cwd() + "/Vanfile.js")) {
+      return require(process.cwd() + "/Vanfile.js");
+    } else {
+      errorOut("Could not find " + "Vanfile.js".bold + " in this directory");
+    }
+  }
+}
+
+var van = loadVanfile()
+
+if (argv._[0] === 'run') {
+  van.run();
+} else if (argv._[0] === 'start') {
+  van.start();
+  
+  process.on('SIGINT', function() {
+    van.stop('SIGINT');
+  });
+}
