@@ -1,28 +1,28 @@
 #!/usr/bin/env node
 
-var colors = require('colors');
+var format = require('chalk');
 var fs = require('fs');
 var argv = require('minimist')(process.argv.slice(2), {alias: {c: ['config']}});
 
 function errorOut(message, code) {
   code = code || 1
-  process.stderr.write("Error: ".red + message + "\n");
+  process.stderr.write(format.red("Error: ") + message + "\n");
   process.exit(code);
 }
 
 function loadVanfile() {
   if (argv.c) {
-    if (fs.existsSync(argv.c)) {
-      return require(argv.c);
+    if (fs.existsSync(process.cwd() + argv.c)) {
+      return require(process.cwd() + argv.c);
     } else {
-      errorOut("Could not load file at location " + argv.c.bold);
+      errorOut("Could not load file at location " + format.bold(argv.c));
     }
   } else {
     // TODO: Make this crawl up the directory tree
     if (fs.existsSync(process.cwd() + "/Vanfile.js")) {
       return require(process.cwd() + "/Vanfile.js");
     } else {
-      errorOut("Could not find " + "Vanfile.js".bold + " in this directory");
+      errorOut("Could not find " + format.bold("Vanfile.js") + " in this directory");
     }
   }
 }
