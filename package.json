@@ -1,6 +1,6 @@
 {
   "name": "van",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "All of your processes can pile into the van.",
   "main": "lib/index.js",
   "scripts": {
